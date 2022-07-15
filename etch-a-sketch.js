@@ -6,9 +6,11 @@ let dimension = INIT_DIM;
 generateGrid();
 
 document.body.addEventListener('mousedown', (event) => {
+    clearSelection();
     mouseDown = true;
 });
 document.body.addEventListener('mouseup', (event) => {
+    clearSelection();
     mouseDown = false;
 });
 let gridSizeButton = document.querySelector('button.size');
@@ -18,8 +20,10 @@ gridSizeButton.addEventListener('click', () => {
     let dim = null;
     while (true) {
         input = prompt("Enter a new grid size");
-        if (!input)
+        if (!input) {
+            dim = dimension;
             break;
+        }
         dim = parseInt(input);
         if (!dim)
             alert("Enter an integer");
@@ -70,3 +74,9 @@ function generateGrid(dim=dimension) {
         }
     }
 }
+
+//From https://stackoverflow.com/questions/62224280/strange-and-unexpected-behaviour-with-javascript-mousedown-mouseup-and-mouseov
+function clearSelection() {
+    if (window.getSelection) {window.getSelection().removeAllRanges();}
+    else if (document.selection) {document.selection.empty();}
+ }

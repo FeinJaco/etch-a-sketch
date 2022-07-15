@@ -3,6 +3,7 @@
     width: 560px;
     height: auto;
     margin: auto;
+    border: 1px solid black;
 }
 
 .grid-item {
@@ -11,7 +12,6 @@
     margin-bottom: 100%;
     background-clip: content-box;
     background-color: auto;
-    border: 1px solid red;
 }
 
 .pixel-on {
