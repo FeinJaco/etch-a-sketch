@@ -1,0 +1,26 @@
+.grid-container {
+    display: grid;
+    width: 560px;
+    height: auto;
+    margin: auto;
+}
+
+.grid-item {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 100%;
+    background-clip: content-box;
+    background-color: auto;
+    border: 1px solid red;
+}
+
+.pixel-on {
+    background-color: black;
+}
+
+.prompt {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+}
